@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rose Day 🌹</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #7a0a2a;
+    }
+
+    h1 {
+      margin-top: 90px;
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.15em;
+      margin: 6px 0;
+    }
+
+    .romantic {
+      margin-top: 30px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .last-line {
+      margin-top: 25px;
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* Rose animation */
+    .rose {
+      position: absolute;
+      bottom: -50px;
+      font-size: 30px;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🌹 Happy Rose Day 🌹</h1>
+  <p>07 February — First Day of Valentine Week</p>
+
+  <div class="romantic">
+    <p>Hi dearest,</p>
+    <p>I know you are upset with me, and yes, the mistake was mine.</p>
+    <p>I behaved selfishly and thought only from my side,</p>
+    <p>but I never wished anything bad for you.</p>
+    <p>I always felt you very close to my heart.</p>
+    <p>But now that you are upset with me, I feel helpless and unable to do anything.</p>
+    <p>It is actually a good thing that you want to take time for yourself,</p>
+    <p>but what about me 😣</p>
+    <p>Anyway, it’s okay… focus on yourself,</p>
+    <p>clear UPSC — that will make me happy too 😶</p>
+
+    <p class="last-line">
+      This is just something I wanted to do only for you, as a small Valentine’s special…  
+      if you liked it, please reply.
+    </p>
+  </div>
+
+  <script>
+    function createRose() {
+      const rose = document.createElement("div");
+      rose.classList.add("rose");
+      rose.innerText = "🌹";
+
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = (Math.random() * 5 + 6) + "s";
+      rose.style.fontSize = (Math.random() * 20 + 20) + "px";
+
+      document.body.appendChild(rose);
+
+      setTimeout(() => {
+        rose.remove();
+      }, 12000);
+    }
+
+    setInterval(createRose, 400);
+  </script>
+
+</body>
+</html>
